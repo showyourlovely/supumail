@@ -6,11 +6,19 @@ const path = require('path')
 
 module.exports = {
   dev: {
-
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    // https://m.maizuo.com/mz/v4/api/billboard/home
+    proxyTable: {
+      '/mz': {//当8080看到请求接口前面是mz的时候
+        target: 'https://m.maizuo.com/',//其实就是让8080去代理到真正的这个域下面去请求
+        changeOrigin: true,
+        pathRewrite: {//让8080去代理请求的时候，把路径中的暗号去去掉
+          '^/mz':''
+        }
+      }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
