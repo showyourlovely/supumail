@@ -1,12 +1,10 @@
 <template>
   <div>
-    <h1>{{ msg }}</h1>
-    <button @click="getBanners">获取</button>
     <div class="swiper-container">
         <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="https://pic.maizuo.com/h5PicUpload/65b08dba38aca8c44d78872e4723eaa9.jpg" alt=""></div>
-            <div class="swiper-slide"><img src="https://pic.maizuo.com/h5PicUpload/5060be84ba0c02a89bea04f4e7eff9e0.jpg" alt=""></div>
-            <div class="swiper-slide"><img src="https://pic.maizuo.com/h5PicUpload/65b08dba38aca8c44d78872e4723eaa9.jpg" alt=""></div>
+            <div v-for="item in bannerList" class="swiper-slide" :key="item.id">
+                <img :src="item.imageUrl" :alt="item.name">
+            </div>
         </div>
     </div>
   </div>
@@ -20,7 +18,7 @@ export default {
 name: 'appBanner',
     data () {
         return {
-            msg: '这是banner'
+            bannerList:[]
         }
     },
     methods: {
@@ -32,13 +30,16 @@ name: 'appBanner',
                     __t:Date.now()
                 }
             }).then( res => {
-                console.log(res) 
+                this.bannerList = res.data.data.billboards
             } )
         }
     },
+    created(){
+        this.getBanners()
+    },
     updated(){
         var mySwiper = new Swiper('.swiper-container', {
-            autoplay: true,//可选选项，自动滑动
+            freeMode : false,
         })
     }
 }

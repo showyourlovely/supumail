@@ -1,12 +1,10 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <app-banner></app-banner>
+  <div>
+    <button @click="getId">获取</button>
   </div>
 </template>
 
 <script>
-import appBanner from './commons/appBanner'
 export default {
   name: 'Index',
   data () {
@@ -15,9 +13,19 @@ export default {
     }
   },
   components: {
-    appBanner,
   },
   methods: {
+    getId () {
+    //    https://m.maizuo.com
+        // 请求的真正接口前面的/mz其实只是一个暗号
+        this.$http.get('/sf/getAppFloorDetailById',{
+            params:{
+                floorId: 11
+            }
+        }).then( res => {
+            console.log(res)
+        } )
+    }
   }
 }
 </script>
