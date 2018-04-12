@@ -15,8 +15,7 @@ import './css/reset.css'
 import axios from 'axios'
 Vue.prototype.$http = axios
 
-import "..//static/font-awesome-4.7.0/css/font-awesome.min.css"
-
+import '../static/font-awesome-4.7.0/css/font-awesome.min.css'
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
