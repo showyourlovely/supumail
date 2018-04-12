@@ -1,12 +1,16 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <app-header></app-header>
     <app-banner></app-banner>
+    <app-footer></app-footer>
   </div>
 </template>
 
 <script>
 import appBanner from './commons/appBanner'
+import appHeader from './commons/appHeader'
+import appFooter from './commons/appFooter'
+
 export default {
   name: 'Index',
   data () {
@@ -15,7 +19,7 @@ export default {
     }
   },
   components: {
-    appBanner,
+    appBanner,appHeader,appFooter
   },
   methods: {
   }
