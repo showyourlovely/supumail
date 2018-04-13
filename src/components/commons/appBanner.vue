@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="swiper-container">
+    <div class="swiper-container1">
         <div class="swiper-wrapper">
             <div v-for="item in bannerList" class="swiper-slide" :key="item.id">
                 <img :src="item.imageUrl" :alt="item.name">
@@ -31,17 +31,26 @@ name: 'appBanner',
                 }
             }).then( res => {
                 this.bannerList = res.data.data.billboards
-            } )
+                // 作为一个 Promise 使用 (2.1.0 起新增，详见接下来的提示)
+                this.$nextTick(function () {
+                    // DOM 更新了
+                    var mySwiper = new Swiper('.swiper-container1', {
+                        freeMode : false,
+                        autoplay : true,
+                        slidesPerView : 'auto',
+                    })
+                })
+            })
         }
     },
     created(){
         this.getBanners()
     },
-    updated(){
-        var mySwiper = new Swiper('.swiper-container', {
-            freeMode : false,
-        })
-    }
+    // updated(){
+    //     var mySwiper = new Swiper('.swiper-container', {
+    //         freeMode : false,
+    //     })
+    // }
 }
 </script>
 

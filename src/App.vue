@@ -2,7 +2,6 @@
   <div id="app">
     <app-header></app-header>
     <app-nav></app-nav>
-    <app-banner></app-banner>
     <router-view class="full"/>
     <app-footer></app-footer>
   </div>
@@ -12,14 +11,13 @@
   document.documentElement.style.fontSize = document.documentElement.clientWidth/3.2 + 'px'
   import appHeader from './components/commons/appHeader'
   import appNav from './components/commons//appNav'
-  import appBanner from './components/commons/appBanner' 
   import appFooter from './components/commons/appFooter' 
    
 
 export default {
   name: 'App',
   components:{
-    appHeader,appNav,appBanner,appFooter
+    appHeader,appNav,appFooter
   },
   methods: {
   }

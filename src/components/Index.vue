@@ -1,36 +1,41 @@
 <template>
-  <div class="floor">
+  <div>
+    <app-banner></app-banner>
+    <div class="floor">
 
 
-    <div class="floor_one">
+      <div class="floor_one">
 
 
-      <ul class="shoplist">
-        <li v-for='item in shopList' class="shop-1" :key="item.productId">
-          <a href="">
-            <div class="p-img">
-                <img class="" :src="item.imageUrl">
-            </div>
-            <div class="p-info">
-                <div class="p-lable"><span class="sp1"></span></div>
-                <div class="p-name omit1">{{item.productName}}</div>
-                <div class="p-price">￥{{item.sfbestPrice}}</div>
-            </div>
-          </a>
-        </li>
-      </ul>
-
-
-
-    </div>
-
+        <ul class="shoplist">
+          <li v-for='item in shopList' class="shop-1" :key="item.productId">
+            <a href="">
+              <div class="p-img">
+                  <img class="" :src="item.imageUrl">
+              </div>
+              <div class="p-info">
+                  <div class="p-lable"><span class="sp1"></span></div>
+                  <div class="p-name omit1">{{item.productName}}</div>
+                  <div class="p-price">￥{{item.sfbestPrice}}</div>
+              </div>
+            </a>
+          </li>
+        </ul>
 
 
 
+      </div>
+
+
+
+
+    </div>    
   </div>
+
 </template>
 
 <script>
+  import appBanner from './commons/appBanner' 
 
 
 export default {
@@ -42,7 +47,7 @@ export default {
     }
   },
   components: {
-    
+    appBanner
   },
   methods: {
     getId () {

@@ -37,16 +37,18 @@ name: 'appNav',
                 }
             }).then( res => {
                 this.navList = res.data.data.appModels
+                this.$nextTick(function () {
+                    // DOM 更新了
+                    var mySwiper = new Swiper('.swiper-container', {
+                        freeMode : false,
+                        slidesPerView : 'auto',
+                    })
+                })
             } )
         }
     },
     created(){
         this.getNavs()
-    },
-    updated(){
-        var mySwiper = new Swiper('.swiper-container', {
-            freeMode : true,
-        })
     }
 }
 </script>
