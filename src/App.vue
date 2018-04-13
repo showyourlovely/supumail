@@ -3,7 +3,7 @@
     <app-header></app-header>
     <app-nav></app-nav>
     <app-banner></app-banner>
-    <router-view/>
+    <router-view class="full"/>
     <app-footer></app-footer>
   </div>
 </template>
@@ -26,6 +26,9 @@ export default {
 }
 </script>
 <style>
+*{
+  box-sizing:border-box;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -33,18 +36,17 @@ export default {
   text-align: center;
   color: #2c3e50;
   height: 100%;
-  position: relative;
+  display: flex;
+  flex-direction: column;
 }
-body {
+body,html {
   font-size: .12rem;
-}
-html{
   height: 100%;
-  position: relative;
 }
-app-footer{
-  position: absolute;
-  bottom: 0;
+.full{
+  flex:1;
+  overflow: hidden;
 }
+
 
 </style>

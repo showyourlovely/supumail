@@ -72,15 +72,14 @@ img {
     position: relative;
 }
 .fa{
-    position: absolute;
+    position: fixed;
     display: block;
     width: .4rem;
     text-align: center;
-    height: 100%;
     color: #cccccc;
     background: #ffffff;
-    left: 2.8rem;
-    top: 0;
+    right: 0;
+    top: 0.42rem;
     line-height: .3rem;
     z-index: 9;
 }

@@ -14,7 +14,9 @@
     .search-box{
         box-sizing: border-box;
         display: flex;
-        width: 100%;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
         height: .42rem;
         padding: .06rem .12rem;
         background: #fff;

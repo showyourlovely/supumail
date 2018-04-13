@@ -1,6 +1,6 @@
 <template>
-  <div>
-    {{msg}}
+  <div class="">
+    
   </div>
 </template>
 
@@ -9,7 +9,7 @@ export default {
   name: 'ItemDetail',
   data () {
     return {
-      msg: 'itemDetail'
+      msg: 'itemDetail'+this.$router.id
     }
   },
   components: {
