@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    
+      {{this.$route.params.id}}
   </div>
 </template>
 
@@ -8,16 +8,11 @@
 export default {
   name: 'ItemDetail',
   data () {
-    return {
-      msg: 'itemDetail'+this.$router.id
-    }
-  },
-  components: {
   },
   methods: {
   },
   mounted(){
-    console.log(this)
+    
   }
 }
 </script>
