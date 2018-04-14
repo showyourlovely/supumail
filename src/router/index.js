@@ -3,7 +3,8 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import Index from '@/components/Index'
 import Login from '@/components/Login'
-import ItemDetail from '@/components/ItemDetail'
+import itemDetail from '@/components/itemDetail'
+import Detail from '@/components/Detail'
 
 Vue.use(Router)
 
@@ -28,7 +29,12 @@ export default new Router({
     {
       path: '/itemDetail/:id',
       name: 'itemDetail',
-      component: ItemDetail
+      component: itemDetail
+    },
+    {
+      path: '/detail/:id',
+      name: 'detail',
+      component: Detail
     }
   ]
 })
