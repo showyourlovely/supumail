@@ -1,10 +1,19 @@
 <template>
   <div class="ite">
-      <div v-for="item in itemList" :key="item.productId">
-        <router-link
-                :to="{name: 'detail',params: { id: item.productId}}">{{item.productName}}</router-link>
-        <img :src="item.imageUrl" alt="">
-      </div>
+      <mt-cell
+        v-for="item in itemList" 
+        :key="item.productId"
+        :to="{name: 'detail',params: { id: item.productId}}"
+        is-link
+        :label=item.productName>
+        <img slot="icon" :src="item.imageUrl" width="90" height="90">
+        <span>{{item.sfbestPrice}}</span>
+        <mt-button 
+          @click.native.stop.prevent="handleClick({id:item.productId,title:item.productName,price:item.sfbestPrice})"
+          type="danger"
+          size="small">加入购物车
+        </mt-button>
+      </mt-cell>
   </div>
 </template>
 
@@ -12,6 +21,7 @@
 import Swiper from 'swiper'
 import '../../node_modules/swiper/dist/css/swiper.min.css'
 import '../../node_modules/swiper/dist/js/swiper.min.js'
+import { mapMutations,mapActions } from 'vuex'
 export default {
   name: 'ItemDetail',
   data () {
@@ -29,6 +39,9 @@ export default {
     this.getItem()
   },
   methods: {
+    ...mapActions({
+      handleClick:'add_good'
+    }),
     getItem () {
         this.$http.get('/sf/getHomeTabDetail',{
           params:{
@@ -57,5 +70,9 @@ export default {
 <style scoped >
   .ite{
     overflow: auto;
+    font-size: .12rem;
+  }
+  mt-cell{
+    margin-top: 5px;
   }
 </style>

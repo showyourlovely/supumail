@@ -5,6 +5,7 @@ import Index from '@/components/Index'
 import Login from '@/components/Login'
 import itemDetail from '@/components/itemDetail'
 import Detail from '@/components/Detail'
+import Car from '@/components/Car'
 
 Vue.use(Router)
 
@@ -35,6 +36,12 @@ export default new Router({
       path: '/detail/:id',
       name: 'detail',
       component: Detail
-    }
+    },
+    {
+      path: '/car',
+      name: 'car',
+      component: Car
+    },
+
   ]
 })
