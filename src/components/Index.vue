@@ -1,7 +1,6 @@
 <template>
-  <div>
-    <app-banner></app-banner>
     <div class="floor">
+    <app-banner></app-banner>
 
 
       <div class="floor_one">
@@ -21,7 +20,20 @@
             </a>
           </li>
         </ul>
-
+        <ul class="shoplist">
+          <li v-for='item in shopList' class="shop-1" :key="item.productId">
+            <a href="">
+              <div class="p-img">
+                  <img class="" :src="item.imageUrl">
+              </div>
+              <div class="p-info">
+                  <div class="p-lable"><span class="sp1"></span></div>
+                  <div class="p-name omit1">{{item.productName}}</div>
+                  <div class="p-price">￥{{item.sfbestPrice}}</div>
+              </div>
+            </a>
+          </li>
+        </ul>
 
 
       </div>
@@ -30,7 +42,6 @@
 
 
     </div>    
-  </div>
 
 </template>
 
@@ -76,7 +87,7 @@ export default {
     display: flex;
     flex: 1;
     overflow: auto;
-    
+    flex-direction: column;
 
     .floor_one{
       display: flex;
