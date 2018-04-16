@@ -1,30 +1,30 @@
 <template>
     <div class="menu-tab">
-        <a href="javascript:;">
+        <a href="/">
             <span class="menu-item">
                 <i class="fa fa-pinterest-square"></i>
                 首页
             </span>
         </a>
-        <a href="javascript:;">
+        <a href="/">
             <span class="menu-item">
                 <i class="fa fa-th-large"></i>
                 分类
             </span>
         </a>
-        <a href="javascript:;">
+        <a href="/">
             <span class="menu-item">
                 <i class="fa fa-dot-circle-o"></i>
                 发现
             </span>
         </a>
-        <a href="javascript:;">
+        <a href="/car">
             <span class="menu-item">
                 <i class="fa fa-opencart"></i>
                 购物车<i class="category-bg num" style="display:none !important;">0</i>
             </span>
         </a>
-        <a href="javascript:;">
+        <a href="/login">
             <span class="menu-item">
                 <i class="fa fa-user-circle"></i>
                 我的优选

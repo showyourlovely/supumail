@@ -5,6 +5,8 @@ import Index from '@/components/Index'
 import Login from '@/components/Login'
 import Register from '@/components/Register'
 import ItemDetail from '@/components/ItemDetail'
+import Detail from '@/components/Detail'
+import Car from '@/components/Car'
 
 Vue.use(Router)
 
@@ -35,6 +37,17 @@ export default new Router({
       path: '/itemDetail/:id',
       name: 'itemDetail',
       component: ItemDetail
-    }
+    },
+    {
+      path: '/detail/:id',
+      name: 'detail',
+      component: Detail
+    },
+    {
+      path: '/car',
+      name: 'car',
+      component: Car
+    },
+
   ]
 })
